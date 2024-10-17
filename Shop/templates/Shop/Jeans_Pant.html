@@ -1,0 +1,69 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <h5>List of Brand</h5>
+            <div class="list-group">
+                <a href="{% url 'Jeans_Pant'%}" class="list-group-item list-group-item-action active" aria-current="true">All Jeans_Pant</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_Bangladesh' %}" class="list-group-item list-group-item-action" aria-current="True">Made in Bangladesh</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_India' %}" class="list-group-item list-group-item-action" aria-current="True">Made in India</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_Malaysia' %}" class="list-group-item list-group-item-action" aria-current="True">Made in Malaysia</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_Singapore' %}" class="list-group-item list-group-item-action" aria-current="True">Made in Singapore</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_China' %}" class="list-group-item list-group-item-action" aria-current="True">Made in China</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_Germany' %}" class="list-group-item list-group-item-action" aria-current="True">Made in Germany</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_United_States' %}" class="list-group-item list-group-item-action" aria-current="True">Made in United States</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_Canada' %}" class="list-group-item list-group-item-action" aria-current="True">Made in Canada</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'Made_in_UK' %}" class="list-group-item list-group-item-action" aria-current="True">Made in UK</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'above' %}" class="list-group-item list-group-item-action" aria-current="True">Price Above 3000</a>
+
+                <a href="{% url 'Jeans_Pant_item' 'below' %}" class="list-group-item list-group-item-action" aria-current="True">Price Below 3000</a>
+                
+            </div>
+
+        </div>
+
+        
+        <div class="col-sm-8 offset-sm-1">
+            <h6>Select Your Product</h6>
+            <div class="row">
+                {% for Product in Jeans_Pant %}
+                <div class="col-sm-4 text-center mb-4 img-fluid img-thumbnail">
+                    
+                    <a href="{% url 'product-detail' Product.id %}" class="btn">
+
+                        <div class="item">
+
+                            <img src="{{Product.product_image.url}}" alt="Product Not Available" height="200" class="">
+                            <div class="fw-bold">{{Product.title}}</div>
+                            <div>Tk-{{Product.discounted_price}}
+                                <small class="fw-light text-decoration-line-through">{{Product.selling_price}}</small>
+                                <br>
+                                {{Product.brand}}
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

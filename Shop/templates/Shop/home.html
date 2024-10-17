@@ -1,0 +1,861 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<!--Banner Slider-->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'Shop/images/banner/shoping_center_03.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'Shop/images/banner/shoping_01.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'Shop/images/banner/gold.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'Shop/images/banner/Coat Shop.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+<!-- End Banner Slider -->
+{% endblock banner_slider %}
+
+{% block livesale %}
+<!-- Live Sale Section -->
+<div class="container">
+    <div class="bg-primary row text-center p-5 text-white border-bottom shadow">
+        <h1>Welcome to Adunick Super Market</h1>
+        <span>10% Instant Discount above 10,000 TK's product buy</span>
+        <small class="fw-lighter">Term and Condition Applied (For details visit 'https://www.adunic.com/'))</small>
+    </div>
+</div>
+<!-- End Live Sale Section -->
+{% endblock livesale %}
+
+{% block main-content %}
+
+
+<!-- 1st Product Slider -->
+<div class="m-3">
+    <h4>Adunick Super Market | Shirt</h4>
+    <!-- Slider 1 -->
+    
+    <div class="owl-carousel" id="slider1">
+        {% for s in Shirt %}
+        <a href="{% url 'product-detail' s.id %}" class="btn">
+            <div class="item"><img src="{{s.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{s.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{s.selling_price}}</span></del><br><span class="fs-5">TK-{{s.discounted_price}}</span></div>
+                    
+        </a>
+
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+<!-- End 1st Product Slider -->
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+    <h4>Adunick Super Market | T-Shirt</h4>
+    
+    <!-- Slider 2 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for ts in T_Shirt %}
+        <a href="{% url 'product-detail' ts.id %}" class="btn">
+            <div class="item"><img src="{{ts.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{ts.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{ts.selling_price}}</span></del><br><span class="fs-5">TK-{{ts.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+<!-- End 2nd Product Slider -->
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+<!-- 3rd Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Jeans Pant</h4>
+    
+    <!-- Slider 3 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for jp in Jeans_Pant %}
+        <a href="{% url 'product-detail' jp.id %}" class="btn">
+            <div class="item"><img src="{{jp.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{jp.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{jp.selling_price}}</span></del><br><span class="fs-5">TK-{{jp.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 3rd Product Slider -->
+
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+
+<!-- 4th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Normal Pant</h4>
+    
+    <!-- Slider 4 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for np in Normal_Pant %}
+        <a href="{% url 'product-detail' np.id %}" class="btn">
+            <div class="item"><img src="{{np.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{np.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{np.selling_price}}</span></del><br><span class="fs-5">TK-{{np.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 4th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+
+
+<!-- 5th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Coat Tie</h4>
+    
+    <!-- Slider 5 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for ct in Coat_Tie %}
+        <a href="{% url 'product-detail' ct.id %}" class="btn">
+            <div class="item"><img src="{{ct.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{ct.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{ct.selling_price}}</span></del><br><span class="fs-5">TK-{{ct.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 5th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+<!-- 6th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Ladies T-Shirt</h4>
+    
+    <!-- Slider 6 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for lts in Ladies_T_Shirt %}
+        <a href="{% url 'product-detail' lts.id %}" class="btn">
+            <div class="item"><img src="{{lts.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{lts.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{lts.selling_price}}</span></del><br><span class="fs-5">TK-{{lts.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 6th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+
+<!-- 7th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Sharee</h4>
+    
+    <!-- Slider 7 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for sr in Sharee %}
+        <a href="{% url 'product-detail' sr.id %}" class="btn">
+            <div class="item"><img src="{{sr.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{sr.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{sr.selling_price}}</span></del><br><span class="fs-5">TK-{{sr.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 7th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+
+
+<!-- 8th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Three Piece</h4>
+    
+    <!-- Slider 8 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for tp in Three_Pieces %}
+        <a href="{% url 'product-detail' tp.id %}" class="btn">
+            <div class="item"><img src="{{tp.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{tp.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{tp.selling_price}}</span></del><br><span class="fs-5">TK-{{tp.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 8th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+
+<!-- 9th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Borkah</h4>
+    
+    <!-- Slider 9 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for br in Borkah %}
+        <a href="{% url 'product-detail' br.id %}" class="btn">
+            <div class="item"><img src="{{br.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{br.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{br.selling_price}}</span></del><br><span class="fs-5">TK-{{br.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 9th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+<!-- 10th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Cosmetics </h4>
+    
+    <!-- Slider 10 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for c in Cosmetics %}
+        <a href="{% url 'product-detail' c.id %}" class="btn">
+            <div class="item"><img src="{{c.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{c.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{c.selling_price}}</span></del><br><span class="fs-5">TK-{{c.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 9th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+
+<!-- 11th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Baby_Toys </h4>
+    
+    <!-- Slider 1 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for bt in Baby_Toys %}
+        <a href="{% url 'product-detail' bt.id %}" class="btn">
+            <div class="item"><img src="{{bt.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{bt.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{bt.selling_price}}</span></del><br><span class="fs-5">TK-{{bt.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 11th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+<!-- 12th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Baby_Fashion </h4>
+    
+    <!-- Slider 12 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for bfn in Baby_Fashion %}
+        <a href="{% url 'product-detail' bfn.id %}" class="btn">
+            <div class="item"><img src="{{bfn.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{bfn.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{bfn.selling_price}}</span></del><br><span class="fs-5">TK-{{bfn.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 12th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+<!-- 123th Product Slider -->
+
+<div class="mx-3">
+    <h4>Adunick Super Market | Baby_Food </h4>
+    
+    <!-- Slider 12 -->
+
+    <div class="owl-carousel" id="slider1">
+        {% for bf in Baby_Food %}
+        <a href="{% url 'product-detail' bf.id %}" class="btn">
+            <div class="item"><img src="{{bf.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{bf.title}}</span><br><del class="text-danger"><span class="fs-5 text-danger">TK-{{bf.selling_price}}</span></del><br><span class="fs-5">TK-{{bf.discounted_price}}</span></div>
+        
+        </a>
+        
+        {% endfor %}
+       
+
+    </div>
+</div>
+
+
+
+<!-- End 12th Product Slider -->
+
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/bKash.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/DBL_ATM_card.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <img src="{% static 'Shop/images/payavail/TK & Dolor.jpg' %}" alt="" srcset="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Payment Info Section -->
+
+
+{% endblock main-content %}
